@@ -1,0 +1,34 @@
+
+/* equal card height */
+#postsCarousel .row-equal > div[class*='col-'] {
+  display: flex;
+  flex: 1 0 auto;
+}
+
+#postsCarousel .row-equal .card {
+ width: 100%;
+}
+
+/* ensure equal card height inside carousel */
+#postsCarousel .carousel-inner>.row-equal.active, 
+#postsCarousel .carousel-inner>.row-equal.next, 
+#postsCarousel .carousel-inner>.row-equal.prev {
+  display: flex;
+}
+
+/* prevent flicker during transition */
+#postsCarousel .carousel-inner>.row-equal.active.left, 
+#postsCarousel .carousel-inner>.row-equal.active.right {
+  opacity: 0.5;
+  display: flex;
+}
+
+
+/* control image height */
+#postsCarousel .card-img-top-250 {
+  max-height: 250px;
+  overflow:hidden;
+}
+
+
+#postsCarousel .card-header{color:dodgerblue}
