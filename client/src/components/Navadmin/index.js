@@ -1,33 +1,31 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { useAuth0 } from "../../react-auth0-wrapper";
 
 function Navadmin() {
+  const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
   return (
-    
-    <nav className="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
-      <div className="container">
-      <a className="navbar-brand" href="/admin">Admin Navbar</a>
-      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbaradmin">
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className="collapse navbar-collapse" id="collapsibleNavbaradmin">
-        <ul className="navbar-nav">
-          <li className="nav-item">
-            <a className="nav-link" href="/admin">Manage Testimonial</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/admin/news">Manage News</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/admin/booking">Manage Booking</a>
-          </li>  
-          <li className="nav-item">
-            <a className="nav-link" href="/admin">Add Services</a>
-          </li>
-           
+    <>
+    {!isAuthenticated && (
+        <p>Log-in to see user tools.</p>
+      )}
+    {
+  isAuthenticated && (
+
+    <div className="left-navigationbar">
+        <ul>
+          <li><Link to="/profile"><i className="fas fa-user"></i>Profile</Link></li>
+          {/* <li><Link to="/external-api">External-Api</Link></li> */}
+          <li><Link to="/admin/testimonial"><i className="fas fa-tasks"></i> Manage Testimonial</Link></li>
+          <li><Link to="/admin/news"><i className="fas fa-newspaper"></i> Manage News</Link></li>
+          <li><Link to="/admin/booking"><i className="fas fa-pen"></i> View Booking List</Link> </li>
+          {/* <li><a href="/admin"><i className="fas fa-paw"></i> Add Services</a></li> */}
+         
         </ul>
-      </div>  
-      </div>
-    </nav>
+    </div>
+    )
+    }
+    </>
   );
 }
 

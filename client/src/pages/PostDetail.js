@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import { Col, Row, Container } from "../components/Grid";
 // import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
+import {Mainheading} from "../components/Mainheading"
+
 
 class PostDetail extends Component {
   state = {
@@ -17,21 +19,27 @@ class PostDetail extends Component {
 
   render() {
     return (
+      <div className="py-5 text-center">
       <Container>
         <Row>
-          <Col size="md-10 md-offset-1">
-            <article>
-              <h1> {this.state.post.news_title}</h1>
-              <h3>{this.state.post.category}</h3>
-              <h3>{this.state.post.date}</h3>
+          <Col size="sm-12">
+            <Mainheading  color="dark">News Detail</Mainheading>
+            <div className="news-detail" >
+
+              <img src={this.state.post.image_url ? this.state.post.image_url :"https://placehold.it/128x197?text=No%20Preview" } 
+              alt="news-post" className="img-fluid"/>
+              <h3><strong className="text-color-blue">Title : </strong>{this.state.post.news_title}</h3>
+              <h5><strong className="text-color-blue">Category : </strong>{this.state.post.category}</h5>
+              <h6><strong className="text-color-blue">News Post Date: </strong>{this.state.post.date ? this.state.post.date.slice(0, 10) : null}</h6>
               <p>
-                {this.state.post.description}
+              <strong className="text-color-blue">Discription : </strong>{this.state.post.description}
               </p>
-            </article>
+            </div>
           </Col>
         </Row>
         
       </Container>
+      </div>
     );
   }
 }

@@ -1,34 +1,50 @@
-
-/* equal card height */
-#postsCarousel .row-equal > div[class*='col-'] {
-  display: flex;
-  flex: 1 0 auto;
+#carouselExampleFade .carousel-control-next-icon,
+#carouselExampleFade .carousel-control-prev-icon {
+  width: 35px;
+  height: 35px;
 }
 
-#postsCarousel .row-equal .card {
- width: 100%;
+#carouselExampleFade .carousel-control-prev-icon {
+   left: -35px;
+  position: absolute;
+  color: #000;
+  width: 15px;
 }
 
-/* ensure equal card height inside carousel */
-#postsCarousel .carousel-inner>.row-equal.active, 
-#postsCarousel .carousel-inner>.row-equal.next, 
-#postsCarousel .carousel-inner>.row-equal.prev {
-  display: flex;
+#carouselExampleFade .carousel-control-next-icon {
+  right: -35px;
+  position: absolute;
+  color: #000;
+  width: 15px;
+}
+#carouselExampleFade .carousel-inner img{
+  height: auto;
+  border-radius: 0;
+ 
 }
 
-/* prevent flicker during transition */
-#postsCarousel .carousel-inner>.row-equal.active.left, 
-#postsCarousel .carousel-inner>.row-equal.active.right {
-  opacity: 0.5;
-  display: flex;
+#carouselExampleFade .pet-name{
+  text-align: center;
+  background-color: #ff3d5d;
+  background-image: linear-gradient(#ff3d5d 0%,#ff9595 , #ff3d5d 60%);
+  padding: 10px;
+  font-size: 1.2rem;
+
 }
-
-
-/* control image height */
-#postsCarousel .card-img-top-250 {
-  max-height: 250px;
-  overflow:hidden;
+.image-slider-box{
+  background-color: grey;
+  background-image: url(../../images/services-bg.jpg);
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+  background-size: cover;
 }
-
-
-#postsCarousel .card-header{color:dodgerblue}
+@media only screen and (max-width: 768px) {
+  .image-slider-box{ 
+  overflow: hidden;
+}
+#carouselExampleFade .pet-name{
+  font-size: 10px;
+  padding: 5px;
+}
+}

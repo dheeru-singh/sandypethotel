@@ -6,9 +6,14 @@ const bookhotelSchema = new Schema({
   pet_name: { type: String, required: true },
   select_pet: String,
   select_pet_size: String,
-  select_date_to: String,
   select_date_from: String,
-  date: { type: Date, default: Date.now }
+  select_date_to: String,
+  date: { type: Date, default: Date.now },
+  pet_count:  { type: Number},
+  days: {type: Number},
+  price: {type: Number},
+  total_price: {type: Number},
+  booking_status: String
 });
 
 const Bookhotel = mongoose.model("Bookhotel", bookhotelSchema);
