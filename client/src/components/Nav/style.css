@@ -14,3 +14,12 @@ nav .decor_semicircle {
 .navbar-dark .navbar-nav .nav-link{
     color:#fff;
 }
+.booking-nav-btn {
+    text-shadow: 1px 2px 4.5px #000;
+  animation: myanimation 2s infinite;
+}
+@keyframes myanimation {
+    0% { background-image: linear-gradient(#ff0000 0%,#ff9595 , #ff0000 60%);}
+    50%{ background-image: linear-gradient(#0394b7 0%,#e6e6e6 , #1592b1 60%);}
+    100% { background-image: linear-gradient(#e8a92e 0%,#f7e1b7 , #e8a92e 60%);}
+  }

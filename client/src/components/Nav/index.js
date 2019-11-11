@@ -35,7 +35,7 @@ const Nav = () => {
             <Link className="nav-link" to="/contact">Contact Us</Link>
           </li>  
           <li className="nav-item">
-            <Link className="nav-link"  
+            <Link className="nav-link booking-nav-btn"  
               to={{
                 pathname: "/booknow",
                 state: user
