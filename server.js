@@ -94,7 +94,7 @@ app.post('/api/form',(req, res)=>{
   nodemailer.createTestAccount((err,account) =>{
     const htmlEmail=`
     <center>
-    <img src="https://mighty-waters-45866.herokuapp.com/static/media/SandyspetHotel_LOGO.6fa1637c.gif" width="250px" />
+    <img src="https://sandypethotel.herokuapp.com/static/media/SandyspetHotel_LOGO.6fa1637c.gif" width="250px" />
     <h2>Contact Details</h2>
       <p><strong>Name: </strong>${req.body.name} </p>
       <p><strong>Email: </strong>${req.body.email} </p>
