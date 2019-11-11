@@ -58,8 +58,10 @@ app.post('/upload', (req, res) => {
 
 // Set up Auth0 configuration
 const authConfig = {
-  domain: "dev-2pm3nnjy.auth0.com",
-  audience: "https://hotel-cauliflower.com/api"
+  // domain: "dev-2pm3nnjy.auth0.com",
+  domain: "dev-745-bdk7.auth0.com",
+  // audience: "https://hotel-cauliflower.com/api"
+  audience: "https://dev-745-bdk7.auth0.com/api"
 };
 
 // Define middleware that validates incoming bearer tokens
